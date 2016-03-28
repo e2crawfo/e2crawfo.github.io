@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Workflows &mdash; nengo_mpi 0.1.0-dev docs</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="nengo_mpi 0.1.0-dev docs" href="index.html"/>
+        <link rel="up" title="User Guide" href="user_guide.html"/>
+        <link rel="next" title="Benchmarks" href="benchmarks.html"/>
+        <link rel="prev" title="Modules" href="modules.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nengo_mpi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how_it_works.html">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Workflows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-with-python-simulate-from-python">1. Build With Python, Simulate From Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-with-python-simulate-using-stand-alone-executable">2. Build With Python, Simulate Using Stand-Alone Executable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#building">Building</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulating">Simulating</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">nengo_mpi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+      
+    <li>Workflows</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/workflows.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workflows">
+<span id="id1"></span><h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h1>
+<p>There are two distinct ways to use nengo_mpi.</p>
+<div class="section" id="build-with-python-simulate-from-python">
+<h2>1. Build With Python, Simulate From Python<a class="headerlink" href="#build-with-python-simulate-from-python" title="Permalink to this headline">¶</a></h2>
+<p>This is the most straightforward way to run simulations. Existing nengo
+scripts can quickly be adapted to use nengo_mpi with this method. This
+workflow is described in <a class="reference internal" href="getting_started.html#getting-started"><span>Getting Started</span></a>.</p>
+</div>
+<div class="section" id="build-with-python-simulate-using-stand-alone-executable">
+<h2>2. Build With Python, Simulate Using Stand-Alone Executable<a class="headerlink" href="#build-with-python-simulate-using-stand-alone-executable" title="Permalink to this headline">¶</a></h2>
+<p>Using this workflow, the process of building networks is similar to the first
+workflow, while the process of running the simulations is quite different. This
+approach offers more flexibility, allowing simulations to be built on one
+computer (which we&#8217;ll call the &#8220;build&#8221; machine) with full python support
+but no MPI installation, and then simulated on another computer (which we&#8217;ll
+call the &#8220;sim&#8221; machine) with a full MPI installation but no python support
+(e.g. a cluster).</p>
+<p>One point to be aware of with this method is that it has some limitations. In
+particular, it cannot deal with networks containing non-trivial nengo Nodes. The
+reason is that at simulation time, python will be completely out of the
+picture, so there is no way to execute the python code that Nodes
+contain. It is possible that this could be fixed in the future by spinning up
+a python interpreter at simulation time, though this would involve at
+significant amount of work. At the present time, the only nengo Nodes are
+allowed are passthrough nodes, nodes that output a constant signal, and
+SpaunStimulus nodes. The first two are trivial to implement, and the third we have
+made special accommodations for.</p>
+<div class="section" id="building">
+<h3>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to build a network and save it to a file. To do this, we need
+to make a change to how we call <code class="docutils literal"><span class="pre">nengo_mpi.Simulator</span></code>. In particular, we supply
+the <code class="docutils literal"><span class="pre">save_file</span></code> argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sim</span> <span class="o">=</span> <span class="n">nengo_mpi</span><span class="o">.</span><span class="n">Simulator</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">partitioner</span><span class="o">=</span><span class="n">partitioner</span><span class="p">,</span> <span class="n">save_file</span><span class="o">=</span><span class="s2">&quot;model.net&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This call will create a file called <code class="docutils literal"><span class="pre">model.net</span></code> in the current directory,
+which stores the operators and signals required to simulate the nengo Network
+specified by <code class="docutils literal"><span class="pre">model</span></code>. This file will actually be an HDF5 file, but we
+typically give it the <code class="docutils literal"><span class="pre">.net</span></code> extension to indicate that it stores a built
+network. The script can then be executed (on the &#8220;build&#8221; machine) using a simple
+invocation:</p>
+<div class="highlight-python"><div class="highlight"><pre>python nengo_script.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="simulating">
+<h3>Simulating<a class="headerlink" href="#simulating" title="Permalink to this headline">¶</a></h3>
+<p>Now we can make use of the network file we&#8217;ve created using the <code class="docutils literal"><span class="pre">nengo_mpi</span></code>
+executable (see <a class="reference internal" href="modules.html#modules"><span>Modules</span></a> for more info on the executable). Assuming that
+we are now on the &#8220;sim&#8221; machine, and that the <code class="docutils literal"><span class="pre">nengo_mpi</span></code> executable has been
+compiled, we can run:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpirun -np NP nengo_mpi model.net 1.0
+</pre></div>
+</div>
+<p>where NP is the number of MPI processors to use. This will simulate the
+network stored in <code class="docutils literal"><span class="pre">model.net</span></code> for 1 second of simulation time.</p>
+<p>The result of the simulation (the data collected by the probes) will be stored
+in an HDF5 file called <code class="docutils literal"><span class="pre">model.h5</span></code>. We can specify a different name for the
+output file as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpirun -np NP nengo_mpi --log results.h5 model.net 1.0
+</pre></div>
+</div>
+<p>Finally, if MPI is not available on the &#8220;sim&#8221; machine, we can instead use:</p>
+<div class="highlight-python"><div class="highlight"><pre>nengo_cpp --log results.h5 model.net 1.0
+</pre></div>
+</div>
+<p>but this will run serially.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="benchmarks.html" class="btn btn-neutral float-right" title="Benchmarks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral" title="Modules" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2014, Applied Brain Research.
+      Last updated on Mar 28, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

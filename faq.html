@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; nengo_mpi 0.1.0-dev docs</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="nengo_mpi 0.1.0-dev docs" href="index.html"/>
+        <link rel="up" title="User Guide" href="user_guide.html"/>
+        <link rel="next" title="Developer Guide" href="dev_guide.html"/>
+        <link rel="prev" title="Benchmarks" href="benchmarks.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nengo_mpi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how_it_works.html">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">nengo_mpi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+      
+    <li>FAQ</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/faq.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p><strong>Is there any build step parallelization?</strong></p>
+<p>No, nengo_mpi only provides parallelization for the simulation step. The build step
+is where all the really difficult stuff happens, which, for instance, makes an Ensemble
+act like an Ensemble. Therefore, nengo_mpi simply uses vanilla nengo&#8217;s
+builder, which runs serially in python.</p>
+<p>During an invocation such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpirun -np 8 python -m nengo_mpi nengo_script.py
+</pre></div>
+</div>
+<p>the build step is performed entirely by the process with index 0.</p>
+<p>It is definitely possible to create a parallelized version of the builder.
+However, that should probably use a more python-friendly,
+platform-agnostic technology than MPI (something like ZeroMQ). In other words,
+thats another project.</p>
+<hr class="docutils" />
+<p><strong>What is the difference between
+a cluster a component, a partition, a chunk, a process, a processor, and a node?
+I&#8217;ve seen all these words used in the code with apparently similar meanings.</strong></p>
+<p>All these terms do in fact have precise meanings in the context of nengo_mpi. They
+can nicely be divided up into terms that apply at build time
+and terms that apply at simulation time.</p>
+<ul>
+<li><p class="first"><strong>Build Time</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>A <code class="docutils literal"><span class="pre">cluster</span></code> (distinct from a cluster of machines in high-performance computing)
+is a group of nengo objects that must be simulated together, for
+any of a number of reasons (see the class <cite>NengoObjectCluster</cite> in <cite>partition/base.py</cite>).
+The most prominent reason is that there is an
+path of Connections between the two objects that does not have a
+synapse (since synapses are the main source of &#8220;update&#8221; operators; see <a class="reference internal" href="how_it_works.html#how-it-works"><span>How It Works</span></a>).
+Another common reason is that the two objects are connected by a Connection
+which has a learning rule. The partitioning step applies a partitioning function
+to a graph whose nodes are <code class="docutils literal"><span class="pre">clusters</span></code>.</li>
+<li>A <code class="docutils literal"><span class="pre">component</span></code> (as in a component of a partition) is a group of <code class="docutils literal"><span class="pre">clusters</span></code> that
+will be simulated together. <code class="docutils literal"><span class="pre">Components</span></code> are computed by the partitioning step.
+When creating an instance of <code class="docutils literal"><span class="pre">nengo_mpi.Simulator</span></code>, we typically specify the number
+of <code class="docutils literal"><span class="pre">components</span></code> that we want the network to be divided into. When nengo_mpi saves
+a network to file for communication with the C++ code, each <code class="docutils literal"><span class="pre">component</span></code> is
+stored separately.</li>
+<li>A <code class="docutils literal"><span class="pre">partition</span></code> is a collection of <code class="docutils literal"><span class="pre">components</span></code>. The goal of the partitioning step
+is to create a partition of the set of clusters, in the sense used
+<a class="reference external" href="https://en.wikipedia.org/wiki/Partition_of_a_set">here</a>. High-quality partitions
+are those which do not assign drastically different amounts of work to different
+components, and which minimize the amount of communication between components.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Simulation Time</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>A <code class="docutils literal"><span class="pre">process</span></code> is, of course, an OS abstraction for a line of computation. A <code class="docutils literal"><span class="pre">processor</span></code>
+is a physical computation device. <code class="docutils literal"><span class="pre">Processes</span></code> run on <code class="docutils literal"><span class="pre">processors</span></code>. It is generally
+possible to run a nengo_mpi simulation using more <code class="docutils literal"><span class="pre">processes</span></code> than there are <code class="docutils literal"><span class="pre">processors</span></code>
+available on the machine, however the amount of
+parallelization we can obtain is determined by the number of physical
+<code class="docutils literal"><span class="pre">processors</span></code> (though hyperthreading can increase the effective number of <code class="docutils literal"><span class="pre">processors</span></code>).
+The number of <code class="docutils literal"><span class="pre">processes</span></code> used to run a simulation is specified by the
+<code class="docutils literal"><span class="pre">-np</span> <span class="pre">&lt;NP&gt;</span></code> command-line argument when calling <code class="docutils literal"><span class="pre">mpi_run</span></code>.</li>
+<li>A <code class="docutils literal"><span class="pre">chunk</span></code> (see <code class="docutils literal"><span class="pre">chunk.hpp</span></code>) is the C++ code&#8217;s abstraction for a collection of nengo
+objects (actually, signals and operators corresponding to those objects) that are being
+simulated by a single <code class="docutils literal"><span class="pre">process</span></code>. There is a one-to-one relationship between <code class="docutils literal"><span class="pre">chunks</span></code>
+and <code class="docutils literal"><span class="pre">processes</span></code>. One of the first things that each <code class="docutils literal"><span class="pre">process</span></code> does is create a <code class="docutils literal"><span class="pre">chunk</span></code>.</li>
+<li>The relationship between <code class="docutils literal"><span class="pre">chunks/processes</span></code> and <code class="docutils literal"><span class="pre">components</span></code> is as follows. At build time
+the network is divided into some specified number of <code class="docutils literal"><span class="pre">components</span></code> by partitioning. At simulation
+time, some specified number of <code class="docutils literal"><span class="pre">chunks/processes</span></code> will be active. <code class="docutils literal"><span class="pre">Components</span></code> are assigned to
+<code class="docutils literal"><span class="pre">chunks/processes</span></code> in a round-robin fashion. For example, if there are 4 <code class="docutils literal"><span class="pre">chunks/processes</span></code>
+active and the network to simulate has 7 components, then <code class="docutils literal"><span class="pre">process</span> <span class="pre">0</span></code> simulates components
+0 and 4, <code class="docutils literal"><span class="pre">process</span> <span class="pre">1</span></code> simulates 1 and 5, etc. If the network instead had only 3 <code class="docutils literal"><span class="pre">components</span></code>,
+then <code class="docutils literal"><span class="pre">process</span> <span class="pre">3</span></code> would be left without anything to simulate, which is perfectly OK.</li>
+<li>In the world of High-Performance Computing, a <code class="docutils literal"><span class="pre">node</span></code> (distinct from a nengo Node) is a physical
+computer consisting of some number of <code class="docutils literal"><span class="pre">processors</span></code>. On the General Purpose Cluster there are 8
+processors per node and on Bluegene/Q there are 16 (that becomes 16 for GPC and 64 for BGQ once
+hyperthreading is taken into account). When running on one of these high-performance clusters,
+jobs are assigned computational resources in units of <code class="docutils literal"><span class="pre">nodes</span></code> rather than <code class="docutils literal"><span class="pre">processors</span></code>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dev_guide.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="benchmarks.html" class="btn btn-neutral" title="Benchmarks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2014, Applied Brain Research.
+      Last updated on Mar 28, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

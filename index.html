@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nengo_mpi &mdash; nengo_mpi 0.1.0-dev docs</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="nengo_mpi 0.1.0-dev docs" href="#"/>
+        <link rel="next" title="Getting Started" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> nengo_mpi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">nengo_mpi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>nengo_mpi</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nengo-mpi">
+<h1>nengo_mpi<a class="headerlink" href="#nengo-mpi" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/e2crawfo/nengo_mpi">nengo_mpi</a> is a C++/MPI backend for
+<a class="reference external" href="https://pythonhosted.org/nengo/index.html">nengo</a>, a python library
+for building and simulating biologically realistic neural networks.
+nengo_mpi makes it possible to run nengo simulations in parallel on
+thousands of processors, and existing nengo scripts can be adapted to
+make use of nengo_mpi with minimal effort.</p>
+<p>With an MPI implementation installed on the system, nengo_mpi can be used
+to run neural simulations in parallel using just a few lines of code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nengo</span>
+<span class="kn">import</span> <span class="nn">nengo_mpi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="k">with</span> <span class="n">nengo</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span> <span class="k">as</span> <span class="n">net</span><span class="p">:</span>
+    <span class="n">sin_input</span> <span class="o">=</span> <span class="n">nengo</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+
+    <span class="c1"># A population of 100 neurons representing a sine wave</span>
+    <span class="n">sin_ens</span> <span class="o">=</span> <span class="n">nengo</span><span class="o">.</span><span class="n">Ensemble</span><span class="p">(</span><span class="n">n_neurons</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nengo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="n">sin_input</span><span class="p">,</span> <span class="n">sin_ens</span><span class="p">)</span>
+
+    <span class="c1"># A population of 100 neurons representing the square of the sine wave</span>
+    <span class="n">sin_squared</span> <span class="o">=</span> <span class="n">nengo</span><span class="o">.</span><span class="n">Ensemble</span><span class="p">(</span><span class="n">n_neurons</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nengo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="n">sin_ens</span><span class="p">,</span> <span class="n">sin_squared</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">)</span>
+
+    <span class="c1"># View the decoded output of sin_squared</span>
+    <span class="n">squared_probe</span> <span class="o">=</span> <span class="n">nengo</span><span class="o">.</span><span class="n">Probe</span><span class="p">(</span><span class="n">sin_squared</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">partitioner</span> <span class="o">=</span> <span class="n">nengo_mpi</span><span class="o">.</span><span class="n">Partitioner</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">nengo_mpi</span><span class="o">.</span><span class="n">Simulator</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">partitioner</span><span class="o">=</span><span class="n">partitioner</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sim</span><span class="o">.</span><span class="n">trange</span><span class="p">(),</span> <span class="n">sim</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">squared_probe</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There are 3 differences between this script and a script using the
+reference implementation of nengo. First, we need to <code class="docutils literal"><span class="pre">import</span> <span class="pre">nengo_mpi</span></code>.
+Then we need to create a <code class="docutils literal"><span class="pre">Partitioner</span></code> object, which specifies how many
+components the nengo network should be split up into (this corresponds
+to the maximum number of distinct processors that can be used to run
+the simulation). Finally, when creating the simulator we need to use
+nengo_mpi&#8217;s Simulator class, and we need to pass in the Partitioner instance.</p>
+<p>The script can then be run in parallel using:</p>
+<div class="highlight-python"><div class="highlight"><pre>mpirun -np 2 python -m nengo_mpi &lt;script_name&gt;
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">sin_ens</span></code> and <code class="docutils literal"><span class="pre">sin_squared</span></code> will be simulated on separate processors, with the
+output of <code class="docutils literal"><span class="pre">sin_ens</span></code> being passed to the input of <code class="docutils literal"><span class="pre">sin_squared</span></code> every
+time-step using MPI. After the simulation has completed, the probed results
+from all processors are passed back to the main processor, so all probed data
+can be accessed in the usual way (e.g. <code class="docutils literal"><span class="pre">sim.data[squared_probe]</span></code>).</p>
+<p>nengo_mpi is fully featured, supporting all aspects of Nengo Release 2.0.2.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#adapting-existing-nengo-scripts">Adapting Existing Nengo Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-scripts">Running scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how_it_works.html">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#developer-installation">Developer installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#how-to-build-the-documentation">How to build the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#development-workflow">Development workflow</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2014, Applied Brain Research.
+      Last updated on Mar 28, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

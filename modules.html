@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modules &mdash; nengo_mpi 0.1.0-dev docs</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="nengo_mpi 0.1.0-dev docs" href="index.html"/>
+        <link rel="up" title="User Guide" href="user_guide.html"/>
+        <link rel="next" title="Workflows" href="workflows.html"/>
+        <link rel="prev" title="How It Works" href="how_it_works.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nengo_mpi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how_it_works.html">How It Works</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mpi-sim-so">mpi_sim.so</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nengo-mpi-executable">nengo_mpi executable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nengo-cpp-executable">nengo_cpp executable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">nengo_mpi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+      
+    <li>Modules</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/modules.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modules">
+<span id="id1"></span><h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<p>nengo_mpi is composed of several fairly separable modules.</p>
+<div class="section" id="python">
+<h2>python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>The python code consists primarily of alternate implementations of both <code class="docutils literal"><span class="pre">nengo.Simulator</span></code> and <code class="docutils literal"><span class="pre">nengo.Model</span></code>. <code class="docutils literal"><span class="pre">nengo_mpi.Simulator</span></code> is a wrapper around the C++/MPI code which provides an interface nearly identical to <code class="docutils literal"><span class="pre">nengo.Simulator</span></code> (see <a class="reference internal" href="getting_started.html#getting-started"><span>Getting Started</span></a>). The <code class="docutils literal"><span class="pre">nengo_mpi.Model</span></code> class is primarily responsible for adapting the output of the reference implementation&#8217;s <em>build</em> step (converting from a high-level model specificationto a concrete computation graph; see <a class="reference internal" href="how_it_works.html#how-it-works"><span>How It Works</span></a>) to work with <code class="docutils literal"><span class="pre">nengo_mpi.Simulator</span></code>.</p>
+<p>The final major chunk of python code handles the complex task of partitioning a nengo Network into a desired number of components that can be simulated independently.</p>
+</div>
+<div class="section" id="c">
+<h2>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<p>The directory <code class="docutils literal"><span class="pre">mpi_sim</span></code> contains the C++ code. This code implements a back-end for nengo which can use MPI to run simulations in parallel. The C++ code only implements simulation capabilities; the <em>build</em> step is still done in python, and nengo_mpi largely uses the builder provided by the reference implementation. The C++ code can be used in at least three different ways.</p>
+<div class="section" id="mpi-sim-so">
+<h3>mpi_sim.so<a class="headerlink" href="#mpi-sim-so" title="Permalink to this headline">¶</a></h3>
+<p>A shared library that allows the python layer to access the core C++ simulator. The python code creates an HDF5 file encoding the built network (the operators and signals that need to be simulated), and then makes a call out to <code class="docutils literal"><span class="pre">mpi_sim.so</span></code> with the name of the file. <code class="docutils literal"><span class="pre">mpi_sim.so</span></code> then opens the file (in parallel if there are multiple processors active) and runs the simulation.</p>
+</div>
+<div class="section" id="nengo-mpi-executable">
+<h3>nengo_mpi executable<a class="headerlink" href="#nengo-mpi-executable" title="Permalink to this headline">¶</a></h3>
+<p>This is an executable that allows the C++ simulator to be used directly, instead of having to go through python. The executable accepts as arguments the name of a file specifying the operators and signals in a network, as well as the length of time to run the simulation for, in seconds. Removing the requirement that the C++ code be accessed through python has a number of advantages. In particular, it can make attaching a debugger much easier. Also, some high-performance clusters (e.g. BlueGene) provide only minimal support for python. The nengo_mpi exectuable has no python dependencies, and so it can be used on these machines. A typical workflow is to use the python code to create the HDF5 file on a machine with full python support, and then transfer that file over to the high-performance cluster where the network encoded by that file can be simulated using the nengo_mpi executable. See <a class="reference internal" href="workflows.html#workflows"><span>Workflows</span></a> for further details.</p>
+</div>
+<div class="section" id="nengo-cpp-executable">
+<h3>nengo_cpp executable<a class="headerlink" href="#nengo-cpp-executable" title="Permalink to this headline">¶</a></h3>
+<p>This is just a version of the nengo_mpi executable which does not have MPI dependencies <a class="footnote-reference" href="#id3" id="id2">[1]</a> (which, of course, means that there is no parallelization). It is possible that some users may find this useful in some situations where the MPI dependency cannot be met, as the C++ simulator is often significantly faster then the reference implementation simulator even without parallelization (see our <a class="reference internal" href="benchmarks.html#benchmarks"><span>Benchmarks</span></a>).</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>This is currently a lie, but it will be true soon.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="workflows.html" class="btn btn-neutral float-right" title="Workflows" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="how_it_works.html" class="btn btn-neutral" title="How It Works" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2014, Applied Brain Research.
+      Last updated on Mar 28, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
