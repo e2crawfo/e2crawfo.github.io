@@ -8,7 +8,7 @@ I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) a
 
 In 2014 I completed a Masters degree in Computer Science in the [Computational Neuroscience Research Group](http://compneuro.uwaterloo.ca/) at the [University of Waterloo](https://uwaterloo.ca/). I was supervised by [Chris Eliasmith](http://arts.uwaterloo.ca/~celiasmi/), and worked on a [biologically plausible model of human knowledge representation](https://github.com/e2crawfo/hrr-scaling). I also wrote an [MPI implementation](https://github.com/e2crawfo/nengo_mpi) of the [nengo](https://github.com/nengo/nengo) neural simulator. In 2012 I obtained a BMATH(CS) degree, also from Waterloo, and spent my co-op terms working on a GPU implementation of nengo.
 
-You can download my CV [here]({{ site.url }}/assets/cv.pdf).
+You can download my CV [here]({{ site.url }}/cv/cv.pdf).
 
 Publications
 ------------
