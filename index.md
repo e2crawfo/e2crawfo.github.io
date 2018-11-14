@@ -10,13 +10,38 @@ In 2014 I completed a Masters degree in Computer Science in the [Computational N
 
 You can download my CV [here]({{ site.url }}/cv/cv.pdf).
 
-Publications
-------------
+Conference / Journal Articles
+-----------------------------
+Spatially Invariant Unsupervised Object Detection with Convolutional Neural Networks.
+Eric Crawford and Joelle Pineau.
+*AAAI* (2019).
 
-Kroger, B., **Crawford, E.**, Bekolay, T., and Eliasmith, C. (2016). Modeling interactions between speech production and perception: speech error detection at semantic and phonological levels and the inner speech loop. *Frontiers in Computational Neuroscience*. doi: 10.3389/fncom.2016.00051.
+BanditSum: Extractive Summarization as a Contextual Bandit.
+Yue Dong, Yikang Shen, Eric Crawford, Herke van Hoof and Jackie C.K. Cheung.
+*EMNLP* (2018).
 
-**Crawford, E.**, Gingerich, M., and Eliasmith, C. (2015). Biologically plausible, human-scale knowledge representation. *Cognitive Science*. doi: 10.1111/cogs.12261.
+Modeling interactions between speech production and perception: speech error detection at semantic and phonological levels and the inner speech loop.
+Bernd J. Kroger, Eric Crawford, Trevor Bekolay and Chris Eliasmith.
+*Frontiers in Computational Neuroscience* (2016).
 
-Voelker, A., **Crawford, E.**, and Eliasmith, C. Learning large-scale heteroassociative memories in spiking neurons. In *Unconventional Computation and Natural Computation. London, Ontario, 07/2014 2014.*
+Biologically plausible, human-scale knowledge representation.
+Eric Crawford, Matthew Gingerich and Chris Eliasmith.
+*Cognitive Science* (2015).
 
-**Crawford, E.**, Gingerich, M., and Eliasmith, C. (2013). Biologically plausible, human-scale knowledge representation. In *35th Annual Conference of the Cognitive Science Society*, 412-417.
+Biologically plausible, human-scale knowledge representation.
+Eric Crawford, Matthew Gingerich and Chris Eliasmith.
+*Conference of the Cognitive Science Society* (2013).
+
+Workshops and Preprints
+-----------------------
+Spatially Invariant Attend, Infer, Repeat.
+Eric Crawford and Joelle Pineau
+*NIPS Workshop on Modeling the Physical World* (2018).
+
+Sequential Coordination of Deep Models for Learning Visual Arithmetic.
+Eric Crawford, Guillaume Rabusseau and Joelle Pineau.
+*arXiv preprint arXiv:1809.04988* (2017).
+
+Learning large-scale heteroassociative memories in spiking neurons.
+Aaron Voelker, Eric Crawford and Chris Eliasmith.
+*Unconventional Computation and Natural Computation* (2014).
