@@ -2,7 +2,9 @@
 layout: page
 ---
 
-I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/). I'm interested in many different areas of machine learning, artificial intelligence and theoretical neuroscience. Most recently I've been attracted to ideas revolving around using reinforcement learning and other forms of stochastic optimization to train neural networks to extract and reason about discrete, structured representations such as objects. I'm supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/).
+I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/), supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/).
+
+I'm interested in many different areas of machine learning and cognitive science. Most recently I've been attracted to ideas revolving around using reinforcement learning and other forms of stochastic optimization to train neural networks to extract and reason about discrete, structured representations such as objects.
 
 In 2014 I completed a Masters degree in Computer Science in the [Computational Neuroscience Research Group](http://compneuro.uwaterloo.ca/) at the [University of Waterloo](https://uwaterloo.ca/). I was supervised by [Chris Eliasmith](http://arts.uwaterloo.ca/~celiasmi/), and worked on a [biologically plausible model of human knowledge representation](https://github.com/e2crawfo/hrr-scaling). I also wrote an [MPI implementation](https://github.com/e2crawfo/nengo_mpi) of the [nengo](https://github.com/nengo/nengo) neural simulator. In 2012 I obtained a BMATH(CS) degree, also from Waterloo, and spent my co-op terms working on a GPU implementation of nengo.
 
