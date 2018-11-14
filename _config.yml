@@ -16,3 +16,5 @@ github_username:  e2crawfo
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-minimal
