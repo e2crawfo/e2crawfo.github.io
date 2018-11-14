@@ -12,7 +12,7 @@ Conference / Journal Articles
 -----------------------------
 Spatially Invariant Unsupervised Object Detection with Convolutional Neural Networks.  
 Eric Crawford and Joelle Pineau.  
-*AAAI* (2019).
+*AAAI* (2019). [[supplemental]]({{ site.url }}/misc/aaai_2019_supplemental.pdf)
 
 BanditSum: Extractive Summarization as a Contextual Bandit.  
 Yue Dong, Yikang Shen, Eric Crawford, Herke van Hoof and Jackie C.K. Cheung.  
