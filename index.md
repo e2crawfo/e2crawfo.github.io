@@ -34,7 +34,7 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 ### Workshops and Preprints
 [Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_nips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*NeurIPS Workshop on Modeling the Physical World* (2018).
+*NeurIPS Workshop on Modeling the Physical World* (2018). [[poster]]({{ site.url }}/pdfs/spair_nips_workshop_poster.pdf)  
 
 [Sequential Coordination of Deep Models for Learning Visual Arithmetic.](https://arxiv.org/abs/1809.04988)  
 **Eric Crawford**, Guillaume Rabusseau and Joelle Pineau.  
