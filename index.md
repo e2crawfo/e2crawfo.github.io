@@ -31,7 +31,7 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 **Eric Crawford**, Matthew Gingerich and Chris Eliasmith.  
 *Conference of the Cognitive Science Society* (2013). [[code]](https://github.com/e2crawfo/hrr-scaling)
 
-### Workshops and Preprints
+### Workshops, Preprints, Theses, Reports
 [Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_nips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
 *NeurIPS Workshop on Modeling the Physical World* (2018). [[code]](https://github.com/e2crawfo/auto_yolo) [[poster]]({{ site.url }}/pdfs/spair_nips_workshop_poster.pdf)  
@@ -40,6 +40,15 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 **Eric Crawford**, Guillaume Rabusseau and Joelle Pineau.  
 *arXiv preprint arXiv:1809.04988* (2017).
 
+[Policy Gradient Methods for Reinforcement Learning.]({{ site.url }}/pdfs/phd_comp.pdf)  
+**Eric Crawford**.
+*Ph.D. Comprehensive Exam, McGill University* (2015).
+
+[Biologically plausible, human-scale knowledge representation.]({{ site.url }}/pdfs/masters_thesis.pdf)  
+**Eric Crawford**.
+*Master of Mathematics Thesis, University of Waterloo* (2015). [[code]](https://github.com/e2crawfo/hrr-scaling)
+
 [Learning large-scale heteroassociative memories in spiking neurons.]({{ site.url }}/pdfs/voelker_2014.pdf)  
 Aaron Voelker, **Eric Crawford** and Chris Eliasmith.  
 *Unconventional Computation and Natural Computation* (2014).
+
