@@ -8,7 +8,7 @@ I'm interested in many different areas of machine learning and cognitive science
 
 In 2014 I completed a Masters degree in Computer Science in the [Computational Neuroscience Research Group](http://compneuro.uwaterloo.ca/) at the [University of Waterloo](https://uwaterloo.ca/). I was supervised by [Chris Eliasmith](http://arts.uwaterloo.ca/~celiasmi/), and worked on a [biologically plausible model of human knowledge representation](https://github.com/e2crawfo/hrr-scaling). I also wrote an [MPI implementation](https://github.com/e2crawfo/nengo_mpi) of the [nengo](https://github.com/nengo/nengo) neural simulator. In 2012 I obtained a BMATH(CS) degree, also from Waterloo, and spent my co-op terms working on a GPU implementation of nengo.
 
-You can download my CV [here]({{ site.url }}/pdfs/cv.pdf).
+You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google scholar [here](https://scholar.google.ca/citations?user=CcifQGgAAAAJ&hl=en).
 
 ### Conference / Journal Articles
 [Spatially Invariant Unsupervised Object Detection with Convolutional Neural Networks.]({{ site.url }}/pdfs/spair_aaai_2019.pdf)  
@@ -32,6 +32,10 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 *Conference of the Cognitive Science Society* (2013). [[code]](https://github.com/e2crawfo/hrr-scaling)
 
 ### Workshops, Preprints, Theses, Reports
+[Self-supervised Learning of Distance Functions for Goal-Conditioned Reinforcement Learning.](https://arxiv.org/abs/1907.02998)  
+Srinivas Venkattaramanujam\*, **Eric Crawford**\*, Thang Doan, and Doina Precup.  
+*arXiv preprint arXiv:1907.02998* (2019).
+
 [Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_nips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
 *NeurIPS Workshop on Modeling the Physical World* (2018). [[code]](https://github.com/e2crawfo/auto_yolo) [[poster]]({{ site.url }}/pdfs/spair_nips_workshop_poster.pdf)  
