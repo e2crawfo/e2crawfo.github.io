@@ -11,9 +11,13 @@ In 2014 I completed a Masters degree in Computer Science in the [Computational N
 You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google scholar [here](https://scholar.google.ca/citations?user=CcifQGgAAAAJ&hl=en).
 
 ### Conference / Journal Articles
+[Exploiting Spatial Invariance for Scalable Unsupervised Object Tracking.]({{ site.url }}/pdfs/silot_aaai_2020.pdf)  
+**Eric Crawford** and Joelle Pineau.  
+*AAAI* (2020). [[code]](https://github.com/e2crawfo/silot) [[supplementary]]({{ site.url }}/misc/silot_supp.pdf)
+
 [Spatially Invariant Unsupervised Object Detection with Convolutional Neural Networks.]({{ site.url }}/pdfs/spair_aaai_2019.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*AAAI* (2019). [[code]](https://github.com/e2crawfo/auto_yolo) [[supplementary]]({{ site.url }}/pdfs/aaai_2019_supplementary.pdf)
+*AAAI* (2019). [[code]](https://github.com/e2crawfo/auto_yolo) [[supplementary]]({{ site.url }}/misc/aaai_2019_supplementary.pdf)
 
 [BanditSum: Extractive Summarization as a Contextual Bandit.](https://arxiv.org/abs/1809.09672)  
 Yue Dong, Yikang Shen, **Eric Crawford**, Herke van Hoof and Jackie C.K. Cheung.  
@@ -32,13 +36,17 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 *Conference of the Cognitive Science Society* (2013). [[code]](https://github.com/e2crawfo/hrr-scaling)
 
 ### Workshops, Preprints, Theses, Reports
+[Spatially Invariant, Label-free Object Tracking.]({{ site.url }}/pdfs/silot_neurips_workshop.pdf)  
+**Eric Crawford** and Joelle Pineau.  
+*NeurIPS Workshop on Perception as Generative Reasoning* (2019). [[code]](https://github.com/e2crawfo/silot)
+
 [Self-supervised Learning of Distance Functions for Goal-Conditioned Reinforcement Learning.](https://arxiv.org/abs/1907.02998)  
 Srinivas Venkattaramanujam\*, **Eric Crawford**\*, Thang Doan, and Doina Precup.  
 *arXiv preprint arXiv:1907.02998* (2019).
 
-[Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_nips_workshop.pdf)  
+[Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_neurips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*NeurIPS Workshop on Modeling the Physical World* (2018). [[code]](https://github.com/e2crawfo/auto_yolo) [[poster]]({{ site.url }}/pdfs/spair_nips_workshop_poster.pdf)  
+*NeurIPS Workshop on Modeling the Physical World* (2018). [[code]](https://github.com/e2crawfo/auto_yolo) [[poster]]({{ site.url }}/pdfs/spair_neurips_workshop_poster.pdf)  
 
 [Sequential Coordination of Deep Models for Learning Visual Arithmetic.](https://arxiv.org/abs/1809.04988)  
 **Eric Crawford**, Guillaume Rabusseau and Joelle Pineau.  
