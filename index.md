@@ -13,7 +13,7 @@ You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google
 ### Conference / Journal Articles
 [Exploiting Spatial Invariance for Scalable Unsupervised Object Tracking.]({{ site.url }}/pdfs/silot_aaai_2020.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*AAAI* (2020). [[code]](https://github.com/e2crawfo/silot) [[supplementary]]({{ site.url }}/misc/silot_supp.pdf) [[arxiv]](https://arxiv.org/abs/1911.09033)
+*AAAI* (2020). [[code]](https://github.com/e2crawfo/silot) [[project]](https://sites.google.com/view/silot) [[supplementary]]({{ site.url }}/misc/silot_supp.pdf) [[arxiv]](https://arxiv.org/abs/1911.09033)
 
 [Spatially Invariant Unsupervised Object Detection with Convolutional Neural Networks.]({{ site.url }}/pdfs/spair_aaai_2019.pdf)  
 **Eric Crawford** and Joelle Pineau.  
