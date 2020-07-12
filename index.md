@@ -1,16 +1,17 @@
 ---
-layout: page
+layout: default
 ---
+<img src="images/me.png" width="150"/>
 
-I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/), supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/).
+Hi! I'm Eric, and I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/), supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/). You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google scholar [here](https://scholar.google.ca/citations?user=CcifQGgAAAAJ&hl=en).
 
-I'm interested in many different areas of machine learning and cognitive science. Most recently I've been interested in ideas revolving around using reinforcement learning and other forms of stochastic optimization to train neural networks to extract and reason about discrete, structured representations such as objects and relations.
+I'm interested in many areas of machine learning and cognitive science, but recently my main focus has been on *object discovery*. More concretely, I've focused on how to build deep probabilistic neural networks that can learn to detect and track objects in the visual stream without supervision. I've built systems that can discover objects in [images]({{ site.url }}/pdfs/spair_aaai_2019.pdf), [videos]({{ site.url }}/pdfs/silot_aaai_2020.pdf), and, most recently, [3D worlds]({{ site.url }}/pdfs/icml_ool_2020.pdf). I'm also interested in how to build systems that can reason in terms of objects in ways that exploit their compositionality.
 
 In 2014 I completed a Masters degree in Computer Science in the [Computational Neuroscience Research Group](http://compneuro.uwaterloo.ca/) at the [University of Waterloo](https://uwaterloo.ca/). I was supervised by [Chris Eliasmith](http://arts.uwaterloo.ca/~celiasmi/), and worked on a [biologically plausible model of human knowledge representation](https://github.com/e2crawfo/hrr-scaling). I also wrote an [MPI implementation](https://github.com/e2crawfo/nengo_mpi) of the [nengo](https://github.com/nengo/nengo) neural simulator. In 2012 I obtained a BMATH(CS) degree, also from Waterloo, and spent my co-op terms working on a GPU implementation of nengo.
 
-You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google scholar [here](https://scholar.google.ca/citations?user=CcifQGgAAAAJ&hl=en).
+When not working I like to travel, hike, play sports (squash, running and ultimate currently), play boardgames, and read books, especially sci-fi and non-fiction. My favorite authors are Kim Stanley Robinson, Neal Stephenson, Greg Egan, and Dan Dennett.
 
-### Conference / Journal Articles
+## Conference / Journal Articles
 [Exploiting Spatial Invariance for Scalable Unsupervised Object Tracking.]({{ site.url }}/pdfs/silot_aaai_2020.pdf)  
 **Eric Crawford** and Joelle Pineau.  
 *AAAI* (2020). [[code]](https://github.com/e2crawfo/silot) [[project]](https://sites.google.com/view/silot) [[supplementary]]({{ site.url }}/misc/silot_supp.pdf) [[arxiv]](https://arxiv.org/abs/1911.09033)
@@ -35,14 +36,14 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 **Eric Crawford**, Matthew Gingerich and Chris Eliasmith.  
 *Conference of the Cognitive Science Society* (2013). [[code]](https://github.com/e2crawfo/hrr-scaling)
 
-### Workshops, Preprints, Theses, Reports
+## Workshops, Preprints, Theses, Reports
 [Learning 3D Object-Oriented World Models from Unlabeled Videos.]({{ site.url }}/pdfs/icml_ool_2020.pdf)  
 **Eric Crawford** and Joelle Pineau.  
 *ICML Workshop on Object-Oriented Learning* (2020). **Oral / Honorable Mention.**
 
 [Spatially Invariant, Label-free Object Tracking.]({{ site.url }}/pdfs/silot_neurips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*NeurIPS Workshop on Perception as Generative Reasoning* (2019). [[code]](https://github.com/e2crawfo/silot)
+*NeurIPS Workshop on Perception as Generative Reasoning* (2019). **Spotlight.** [[code]](https://github.com/e2crawfo/silot)
 
 [Self-supervised Learning of Distance Functions for Goal-Conditioned Reinforcement Learning.](https://arxiv.org/abs/1907.02998)  
 Srinivas Venkattaramanujam, **Eric Crawford**, Thang Doan, and Doina Precup.  
