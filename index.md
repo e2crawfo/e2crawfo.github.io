@@ -38,14 +38,14 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 ### Workshops, Preprints, Theses, Reports
 [Learning 3D Object-Oriented World Models from Unlabeled Videos.]({{ site.url }}/pdfs/icml_ool_2020.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*ICML Workshop on Object-Oriented Learning* (2020). **Oral/Honorable Mention.**
+*ICML Workshop on Object-Oriented Learning* (2020). **Oral / Honorable Mention.**
 
 [Spatially Invariant, Label-free Object Tracking.]({{ site.url }}/pdfs/silot_neurips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
 *NeurIPS Workshop on Perception as Generative Reasoning* (2019). [[code]](https://github.com/e2crawfo/silot)
 
 [Self-supervised Learning of Distance Functions for Goal-Conditioned Reinforcement Learning.](https://arxiv.org/abs/1907.02998)  
-Srinivas Venkattaramanujam\*, **Eric Crawford**\*, Thang Doan, and Doina Precup.  
+Srinivas Venkattaramanujam, **Eric Crawford**, Thang Doan, and Doina Precup.  
 *arXiv preprint arXiv:1907.02998* (2019).
 
 [Spatially Invariant Attend, Infer, Repeat.]({{ site.url }}/pdfs/spair_neurips_workshop.pdf)  
