@@ -2,6 +2,8 @@
 layout: page
 ---
 
+<img src="images/me.jpg" width="200"/>
+
 I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/), supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/).
 
 I'm interested in many different areas of machine learning and cognitive science. Most recently I've been interested in ideas revolving around using reinforcement learning and other forms of stochastic optimization to train neural networks to extract and reason about discrete, structured representations such as objects and relations.
@@ -67,5 +69,3 @@ Srinivas Venkattaramanujam, **Eric Crawford**, Thang Doan, and Doina Precup.
 [Learning large-scale heteroassociative memories in spiking neurons.]({{ site.url }}/pdfs/voelker_2014.pdf)  
 Aaron Voelker, **Eric Crawford** and Chris Eliasmith.  
 *Unconventional Computation and Natural Computation* (2014).
-
-<img src="images/me.jpg" width="50"/>
