@@ -2,8 +2,6 @@
 layout: page
 ---
 
-<img src="images/me.jpg" width="200"/>
-
 I'm a PhD student in the [Reasoning and Learning Lab](http://rl.cs.mcgill.ca/) at [McGill University](https://www.mcgill.ca/), supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/).
 
 I'm interested in many different areas of machine learning and cognitive science. Most recently I've been interested in ideas revolving around using reinforcement learning and other forms of stochastic optimization to train neural networks to extract and reason about discrete, structured representations such as objects and relations.
