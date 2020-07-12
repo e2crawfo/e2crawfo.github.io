@@ -68,3 +68,4 @@ Srinivas Venkattaramanujam, **Eric Crawford**, Thang Doan, and Doina Precup.
 Aaron Voelker, **Eric Crawford** and Chris Eliasmith.  
 *Unconventional Computation and Natural Computation* (2014).
 
+![me](/images/me.jpg "me")
