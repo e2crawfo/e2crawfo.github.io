@@ -7,7 +7,7 @@
 
 # Site settings
 title: Eric Crawford
-email: eric [dot] crawford [at] mail.mcgill.ca
+email: firstname [dot] lastname [at] mail.mcgill.ca
 description: > # this means to ignore newlines until "baseurl:"
   Website of Eric Crawford, PhD student studying machine learning and theoretical neuroscience.
 baseurl: "" # the subpath of your site, e.g. /blog
