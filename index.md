@@ -39,7 +39,7 @@ Bernd J. Kroger, **Eric Crawford**, Trevor Bekolay and Chris Eliasmith.
 ## Workshops, Preprints, Theses, Reports
 [Learning 3D Object-Oriented World Models from Unlabeled Videos.]({{ site.url }}/pdfs/icml_ool_2020.pdf)  
 **Eric Crawford** and Joelle Pineau.  
-*ICML Workshop on Object-Oriented Learning* (2020). **Oral / Honorable Mention.**
+*ICML Workshop on Object-Oriented Learning* (2020). **Outstanding Paper Award.**
 
 [Spatially Invariant, Label-free Object Tracking.]({{ site.url }}/pdfs/silot_neurips_workshop.pdf)  
 **Eric Crawford** and Joelle Pineau.  
