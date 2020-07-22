@@ -9,7 +9,11 @@ I'm interested in many areas of machine learning and cognitive science, but rece
 
 In 2014 I completed a Masters degree in Computer Science in the [Computational Neuroscience Research Group](http://compneuro.uwaterloo.ca/) at the [University of Waterloo](https://uwaterloo.ca/). I was supervised by [Chris Eliasmith](http://arts.uwaterloo.ca/~celiasmi/), and worked on a [biologically plausible model of human knowledge representation](https://github.com/e2crawfo/hrr-scaling). I also wrote an [MPI implementation](https://github.com/e2crawfo/nengo_mpi) of the [nengo](https://github.com/nengo/nengo) neural simulator. In 2012 I obtained a BMATH(CS) degree, also from Waterloo, and spent my co-op terms working on a GPU implementation of nengo.
 
-When not working I like to travel, hike, play sports (squash, running and ultimate currently), play boardgames, and read books, especially sci-fi and non-fiction. My favorite authors are Kim Stanley Robinson, Neal Stephenson, Greg Egan, and Dan Dennett.
+When not working I like to travel, hike, play sports (squash, running and ultimate currently), play board games, and read books, especially sci-fi and non-fiction. My favorite authors are Kim Stanley Robinson, Neal Stephenson, Greg Egan, and Dan Dennett.
+
+## News
+My paper [Learning 3D Object-Oriented World Models from Unlabeled Videos]({{ site.url }}/pdfs/icml_ool_2020.pdf)
+received an Outstanding Paper Award at the Object-Oriented Learning workshop at ICML 2020.
 
 ## Conference / Journal Articles
 [Exploiting Spatial Invariance for Scalable Unsupervised Object Tracking.]({{ site.url }}/pdfs/silot_aaai_2020.pdf)  
