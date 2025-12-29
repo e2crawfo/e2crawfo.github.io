@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Eric Crawford, PhD Candidate at McGill University
+title: Eric Crawford, PhD, Senior Deep Learning Engineer at Skydio.
 email: firstname [dot] lastname [at] mail.mcgill.ca
 description: > # this means to ignore newlines until "baseurl:"
-  Website of Eric Crawford, PhD student studying machine learning at McGill University.
+  Website of Eric Crawford, PhD, Senior Deep Learning Engineer at Skydio.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://e2crawfo.github.io" # the base hostname & protocol for your site
 github_username:  e2crawfo

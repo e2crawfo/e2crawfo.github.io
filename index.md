@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<img src="images/me.png" width="150"/>
-
 Hi! I'm Eric, and I'm a Senior Deep Learning Engineer at [Skydio](https://www.skydio.com) working on training and deploying efficient edge neural networks running on drones. You can download my CV [here]({{ site.url }}/pdfs/cv.pdf), and find me on google scholar [here](https://scholar.google.ca/citations?user=CcifQGgAAAAJ&hl=en) and LinkedIn [here](https://www.linkedin.com/in/eric-crawford-79a27613b).
 
 In 2021 I graduated from [McGill University](https://www.mcgill.ca/) with a PhD in computer science, supervised by [Joelle Pineau](http://cs.mcgill.ca/~jpineau/), where I worked on reinforcement learning and building VAEs with structured (object-like) latent representations. The main focus of my PhD was *object discovery*, i.e. given a dataset of images/videos/interactions, how can we identify common objects in the dataset, learn to detect them, and maybe even reason about them. More concretely, I focused on how to build deep probabilistic neural networks that can learn to detect and track objects in the visual stream without supervision. I built systems that can discover objects in [images]({{ site.url }}/pdfs/spair_aaai_2019.pdf), [videos]({{ site.url }}/pdfs/silot_aaai_2020.pdf), and, most recently, [3D worlds]({{ site.url }}/pdfs/icml_ool_2020.pdf). I also explored how to build systems that can reason in terms of objects in ways that exploit their compositionality.
